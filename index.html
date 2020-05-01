@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -51,18 +51,21 @@
                         
                         <table>
                          <p class="product-quantity">QUANTITY:</p>
-                         <form>
-                             <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"><p class="sign"><strong >-</strong></p></div>
-                            <input class="value-zero" type="number" id="number" value="0" />
-                            <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"><p class="sign"><strong >+</strong></p></div>
-                                 </form>
+                          <div class="cart-plus-minus" data-target="amount-1">
+                                <button class="button cart-minus-1"><strong>-</strong></button>
+                                <input type="number" id="amount-1" value="0" min="1" max="300">
+                                <button class="button cart-plus-1"><strong>+</strong></button>
+                              </div>
                                 </table>
                          <table class="pay-button">
                              <tr>
                                  <td>
                           <button class="button1" type="submit" name="payable">Payable</button></td>
             
-                          <td><p  class="total-amount">= <strong>Rs 399</strong></p></p></td>
+                          <td><a href="" class="a-link">
+                            <label><strong>=  Rs</strong> </label>
+                            <input type="text" placeholder="Total" value="0" id="total">
+                          </a></td>
                         </tr>
                         </table>
                     </article>
