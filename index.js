@@ -1,14 +1,18 @@
-function increaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').value = value;
+var cartButtons = $('.cart-plus-minus').find('button');
+var total = parseInt($("#amount-1").val());
+$("#total").val(total);
+$(cartButtons).on('click', function(e) {
+  e.preventDefault();
+  var $this = $(this);
+  var target = $this.parent().data('target');
+  var target = $('#' + target);
+  var current = parseFloat($(target).val());
+  if ($this.hasClass('cart-plus-1'))
+    target.val(current + 1);
+  else {
+    (current < 2) ? null: target.val(current - 1);
   }
-  
-  function decreaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value < 1 ? value = 1 : '';
-    value--;
-    document.getElementById('number').value = value;
-  }
+  var num1=399;
+  total = parseInt($("#amount-1").val())*num1;
+  $("#total").val(total);
+});
